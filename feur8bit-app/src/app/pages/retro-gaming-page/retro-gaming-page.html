@@ -1,1 +1,151 @@
-<p>retro-gaming-page works!</p>
+<div class="retro-gaming-page">
+
+    <app-retro-hud></app-retro-hud>
+
+    <div class="retro-content" [class.show]="showContent">
+
+        <div class="retro-header">
+      <h1 class="glitch-text">👾 PROJET NIRD - VERSION RÉTRO 👾</h1>
+      <p class="subtitle blink">
+        Bienvenue sur la version rétro-gaming de notre application<br>
+        réalisée pour la Nuit de l'Info 2025
+      </p>
+      <div class="divider">═══════════════════════════════════════</div>
+    </div>
+
+        <app-retro-section title="🎯 LE CONCEPT" [animated]="true">
+      <p class="pixel-text">
+        Face au géant numérique <span class="enemy">GOLIATH</span>,
+        l'École peut devenir un village <span class="hero">ASTÉRIX</span> :
+        ingénieux, autonome et créateur d'un avenir numérique libre.
+      </p>
+      <p class="pixel-text">
+        C'est l'ambition de la démarche <strong>NIRD</strong> (Numérique Inclusif,
+        Responsable et Durable) : permettre aux établissements scolaires
+        d'adopter un <span class="highlight">Numérique Inclusif, Responsable et Durable</span>.
+      </p>
+      <div class="quest-box">
+        <span class="quest-icon">⚔️</span>
+        <span>QUÊTE PRINCIPALE : Réduire les dépendances numériques</span>
+      </div>
+    </app-retro-section>
+
+        <app-retro-section title="🎮 OBJECTIFS DE LA MISSION">
+      <ul class="retro-list">
+        <li>
+          <span class="bullet">▶</span>
+          Développer une plateforme gamifiée pour animer et encourager
+          la contribution NIRD
+        </li>
+        <li>
+          <span class="bullet">▶</span>
+          Faciliter la contribution au sein de la communauté
+        </li>
+        <li>
+          <span class="bullet">▶</span>
+          Mettre en valeur les solutions proposées par la démarche NIRD
+        </li>
+        <li>
+          <span class="bullet">▶</span>
+          Proposer une expérience ludique, attractive et engageante
+        </li>
+      </ul>
+
+      <div class="power-up-box">
+        <span class="power-icon">⭐</span>
+        <div>
+          <strong>POWER-UP REQUIS :</strong>
+          <p>Outil interactif : mini-site narratif, plateforme explicative,
+            tableau de simulation, interface gamifiée...</p>
+        </div>
+      </div>
+    </app-retro-section>
+
+        <app-retro-section title="👥 LES JOUEURS DU PROJET">
+      <div class="character-grid">
+        <div class="character-card">
+          <div class="character-sprite">🎓</div>
+          <div class="character-name">ÉLÈVES & ÉCO-DÉLÉGUÉS</div>
+        </div>
+        <div class="character-card">
+          <div class="character-sprite">👨‍🏫</div>
+          <div class="character-name">ENSEIGNANTS</div>
+        </div>
+        <div class="character-card">
+          <div class="character-sprite">🏛️</div>
+          <div class="character-name">DIRECTIONS</div>
+        </div>
+        <div class="character-card">
+          <div class="character-sprite">⚙️</div>
+          <div class="character-name">TECHNICIENS RÉSEAU</div>
+        </div>
+      </div>
+
+      <p class="pixel-text centered">
+        Ensemble, ces acteurs transforment les pratiques pour construire
+        un numérique éducatif plus autonome, durable et éthique.
+      </p>
+    </app-retro-section>
+
+        <app-retro-section title="🕹️ ACTIVITÉS & COMPÉTENCES">
+      <div class="skills-grid">
+        <div class="skill-item">
+          <span class="skill-icon">🐧</span>
+          <span>Promouvoir l'usage de <strong>Linux</strong></span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-icon">♻️</span>
+          <span>Encourager le <strong>réemploi</strong> du matériel</span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-icon">🔓</span>
+          <span>Mutualiser les <strong>ressources libres</strong></span>
+        </div>
+        <div class="skill-item">
+          <span class="skill-icon">🏗️</span>
+          <span>Favoriser la <strong>co-construction</strong></span>
+        </div>
+      </div>
+
+      <div class="boss-banner">
+        <span class="boss-icon">👾</span>
+        <span>BOSS FINAL : L'EMPIRE NUMÉRIQUE</span>
+        <span class="boss-icon">👾</span>
+      </div>
+    </app-retro-section>
+
+        <app-retro-section title="📚 RESSOURCES & LIENS">
+      <div class="link-box">
+        <p>
+          <span class="link-icon">🔗</span>
+          Site officiel NIRD :
+          <a href="https://nird.forge.apps.education.fr/" target="_blank" class="retro-link">
+            nird.forge.apps.education.fr
+          </a>
+        </p>
+      </div>
+
+      <p class="info-text">
+        Le projet NIRD est né au lycée Carnot de Bruay-la-Buissière (Hauts-de-France).
+        La démarche cherche à étendre ce numérique émancipateur à tous les établissements scolaires.
+      </p>
+    </app-retro-section>
+
+        <div class="action-zone">
+      <button class="retro-button" (click)="startGame()">
+        <span class="button-text">▶ START MISSION ◀</span>
+      </button>
+
+      <p class="credits" (click)="easterEgg()">
+        Made with 💚 for Nuit de l'Info 2025<br>
+        IUTLCO - Département Informatique
+      </p>
+    </div>
+
+  </div>
+
+    <div class="scanlines"></div>
+
+    <div class="crt-border"></div>
+
+</div>

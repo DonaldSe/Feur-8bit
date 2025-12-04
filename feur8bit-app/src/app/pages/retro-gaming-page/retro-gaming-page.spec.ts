@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RetroGamingPage } from './retro-gaming-page';
+import { RetroGamingPageComponent } from './retro-gaming-page';
 
-describe('RetroGamingPage', () => {
-  let component: RetroGamingPage;
-  let fixture: ComponentFixture<RetroGamingPage>;
+describe('RetroGamingPageComponent', () => {
+  let component: RetroGamingPageComponent;
+  let fixture: ComponentFixture<RetroGamingPageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RetroGamingPage]
+      imports: [RetroGamingPageComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RetroGamingPage);
+    fixture = TestBed.createComponent(RetroGamingPageComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

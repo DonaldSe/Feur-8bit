@@ -1,0 +1,480 @@
+
+
+
+$retro-bg: #0a0a1f;
+$retro-primary: #00ff00;
+$retro-secondary: #ff00ff;
+$retro-accent: #00ffff;
+$retro-danger: #ff0000;
+$retro-warning: #ffff00;
+$retro-border: #ffffff;
+$retro-text: #f8f8f8;
+
+
+
+
+@mixin pixel-border($color: $retro-border, $size: 3px) {
+  border: $size solid $color;
+  box-shadow:
+    0 0 0 ($size + 1px) rgba(0, 0, 0, 0.8),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+@mixin text-shadow-retro($color: $retro-primary) {
+  text-shadow:
+    2px 2px 0 rgba(0, 0, 0, 0.8),
+    0 0 10px $color,
+    0 0 20px $color;
+}
+
+
+
+
+.retro-gaming-page {
+  font-family: 'Courier New', monospace;
+  background: $retro-bg;
+  background-image:
+    repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 255, 0, 0.03) 2px,
+        rgba(0, 255, 0, 0.03) 4px
+    );
+  color: $retro-text;
+  min-height: 100vh;
+  padding: 16px;
+  position: relative;
+  overflow-x: hidden;
+
+  &::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        ellipse at center,
+        transparent 0%,
+        rgba(0, 0, 0, 0.7) 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+  }
+}
+
+
+
+
+.scanlines {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.15) 1px,
+      transparent 1px,
+      transparent 3px
+  );
+  animation: scanline-move 8s linear infinite;
+}
+
+@keyframes scanline-move {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(4px); }
+}
+
+
+
+
+.crt-border {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  border: 20px solid rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  box-shadow:
+    inset 0 0 50px rgba(0, 255, 0, 0.1),
+    inset 0 0 100px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+.retro-content {
+  @include pixel-border($retro-primary, 4px);
+  padding: 24px;
+  background: rgba(10, 10, 40, 0.95);
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+
+  &.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+.retro-header {
+  text-align: center;
+  margin-bottom: 32px;
+
+  h1 {
+    font-size: 2rem;
+    margin: 0 0 16px 0;
+    color: $retro-primary;
+    @include text-shadow-retro($retro-primary);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+}
+
+.glitch-text {
+  animation: glitch 3s infinite;
+}
+
+@keyframes glitch {
+  0%, 90%, 100% {
+    transform: translate(0);
+  }
+  92% {
+    transform: translate(-2px, 2px);
+  }
+  94% {
+    transform: translate(2px, -2px);
+  }
+  96% {
+    transform: translate(-2px, -2px);
+  }
+  98% {
+    transform: translate(2px, 2px);
+  }
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: $retro-accent;
+  margin: 0 0 16px 0;
+  line-height: 1.6;
+}
+
+.blink {
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%, 49%, 100% { opacity: 1; }
+  50%, 99% { opacity: 0.3; }
+}
+
+.divider {
+  color: $retro-secondary;
+  font-size: 0.8rem;
+  margin: 16px 0;
+  opacity: 0.6;
+}
+
+
+
+
+.pixel-text {
+  line-height: 1.8;
+  margin: 12px 0;
+  font-size: 0.95rem;
+
+  .enemy {
+    color: $retro-danger;
+    font-weight: bold;
+    text-shadow: 0 0 10px $retro-danger;
+  }
+
+  .hero {
+    color: $retro-primary;
+    font-weight: bold;
+    text-shadow: 0 0 10px $retro-primary;
+  }
+
+  .highlight {
+    color: $retro-warning;
+    font-weight: bold;
+  }
+
+  &.centered {
+    text-align: center;
+  }
+}
+
+
+
+
+.quest-box,
+.power-up-box {
+  @include pixel-border($retro-accent, 2px);
+  padding: 12px;
+  margin: 16px 0;
+  background: rgba(0, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.quest-icon,
+.power-icon {
+  font-size: 1.5rem;
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+
+
+
+.retro-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+
+  li {
+    margin: 12px 0;
+    padding-left: 24px;
+    position: relative;
+    line-height: 1.6;
+
+    .bullet {
+      position: absolute;
+      left: 0;
+      color: $retro-primary;
+      animation: pulse 1.5s infinite;
+    }
+  }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+
+
+
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.character-card {
+  @include pixel-border($retro-border, 2px);
+  padding: 16px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    background: rgba(0, 255, 0, 0.1);
+    border-color: $retro-primary;
+  }
+}
+
+.character-sprite {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.character-name {
+  font-size: 0.75rem;
+  color: $retro-accent;
+  font-weight: bold;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.skill-item {
+  @include pixel-border($retro-warning, 2px);
+  padding: 12px;
+  background: rgba(255, 255, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.skill-icon {
+  font-size: 1.5rem;
+}
+
+
+
+
+.boss-banner {
+  @include pixel-border($retro-danger, 3px);
+  padding: 16px;
+  margin: 24px 0;
+  background: rgba(255, 0, 0, 0.1);
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: $retro-danger;
+  @include text-shadow-retro($retro-danger);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  animation: boss-flash 2s infinite;
+}
+
+@keyframes boss-flash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.boss-icon {
+  font-size: 2rem;
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+
+
+
+.link-box {
+  @include pixel-border($retro-secondary, 2px);
+  padding: 12px;
+  margin: 16px 0;
+  background: rgba(255, 0, 255, 0.05);
+}
+
+.link-icon {
+  color: $retro-secondary;
+  margin-right: 8px;
+}
+
+.retro-link {
+  color: $retro-accent;
+  text-decoration: none;
+  border-bottom: 1px dotted $retro-accent;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $retro-primary;
+    border-bottom-color: $retro-primary;
+    text-shadow: 0 0 10px $retro-primary;
+  }
+}
+
+.info-text {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin: 12px 0;
+}
+
+
+
+
+.action-zone {
+  text-align: center;
+  margin-top: 32px;
+}
+
+.retro-button {
+  @include pixel-border($retro-border, 4px);
+  padding: 16px 32px;
+  background: $retro-danger;
+  color: $retro-text;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  box-shadow:
+    6px 6px 0 rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(255, 0, 0, 0.5);
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: lighten($retro-danger, 10%);
+    box-shadow:
+      6px 6px 0 rgba(0, 0, 0, 0.8),
+      0 0 30px rgba(255, 0, 0, 0.8);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translate(6px, 6px);
+    box-shadow:
+      0 0 0 rgba(0, 0, 0, 0.8),
+      0 0 20px rgba(255, 0, 0, 0.5);
+  }
+}
+
+.button-text {
+  display: inline-block;
+  animation: button-pulse 1.5s infinite;
+}
+
+@keyframes button-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.credits {
+  margin-top: 24px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $retro-primary;
+  }
+}
+
+
+
+
+@media (max-width: 768px) {
+  .retro-gaming-page {
+    padding: 8px;
+  }
+
+  .retro-content {
+    padding: 16px;
+  }
+
+  .retro-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .character-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+}

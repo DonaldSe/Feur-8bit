@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RetroSection } from './retro-section';
+import { RetroSectionComponent } from './retro-section';
 
-describe('RetroSection', () => {
-  let component: RetroSection;
-  let fixture: ComponentFixture<RetroSection>;
+describe('RetroSectionComponent', () => {
+  let component: RetroSectionComponent;
+  let fixture: ComponentFixture<RetroSectionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RetroSection]
+      imports: [RetroSectionComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RetroSection);
+    fixture = TestBed.createComponent(RetroSectionComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });

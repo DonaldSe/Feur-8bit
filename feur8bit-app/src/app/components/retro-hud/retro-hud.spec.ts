@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RetroHud } from './retro-hud';
+import { RetroHudComponent } from './retro-hud';
 
-describe('RetroHud', () => {
-  let component: RetroHud;
-  let fixture: ComponentFixture<RetroHud>;
+describe('RetroHudComponent', () => {
+  let component: RetroHudComponent;
+  let fixture: ComponentFixture<RetroHudComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RetroHud]
+      imports: [RetroHudComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RetroHud);
+    fixture = TestBed.createComponent(RetroHudComponent);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
