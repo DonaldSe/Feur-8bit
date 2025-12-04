@@ -19,9 +19,9 @@ Objectif : Ajouter une touche rétro-gaming à la production
    https://votre-domaine.com/retro
 
 📝 Route dans l'application Angular :
-   /retro
+   /feur8bit-app
 
-⚡ En local (après ng serve) :
+⚡ En local (après la commande "ng serve") :
    http://localhost:4200/retro
 
 
