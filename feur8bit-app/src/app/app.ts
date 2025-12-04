@@ -177,7 +177,7 @@ interface GameState {
           </button>
 
           <p class="credits" (click)="easterEgg()">
-            Made with 💚 for Nuit de l'Info 2025<br>
+            Made with 💚Feur for Nuit de l'Info 2025<br>
             IUTLCO - Département Informatique
           </p>
         </div>
