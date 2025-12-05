@@ -65,29 +65,6 @@ Objectif : Ajouter une touche rétro-gaming à la production
 • Signals pour la gestion d'état
 • Responsive design
 
-
-┌─────────────────────────────────────────────────────────────────────────┐
-│ INSTALLATION ET LANCEMENT                                              │
-└─────────────────────────────────────────────────────────────────────────┘
-
-1. Cloner ou créer le projet Angular :
-   ng new nird-retro-project --routing --style=scss
-
-2. Créer les composants :
-   ng generate component pages/retro-gaming-page
-   ng generate component components/retro-hud
-   ng generate component components/retro-section
-   ng generate service services/game-state
-
-3. Copier les fichiers fournis dans les bons dossiers
-
-4. Lancer le serveur :
-   ng serve
-
-5. Accéder à l'application :
-   http://localhost:4200/retro
-
-
 ┌─────────────────────────────────────────────────────────────────────────┐
 │ STRUCTURE DU PROJET                                                     │
 └─────────────────────────────────────────────────────────────────────────┘
