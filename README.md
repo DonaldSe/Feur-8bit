@@ -1,4 +1,4 @@
-﻿Lien du retro : https://donaldse.github.io/Feur-8bit/retro
+﻿Lien du retro : https://donaldse.github.io/Feur-8bit/retro/
 Attention si fonctionne pas à la fin mettez un slash "/" dans le lien
 
 ## 🎮 Contexte du projet
@@ -16,6 +16,7 @@ Ajouter un élément rétro gaming à une page *ou* transformer entièrement une
 Ce projet inclut donc une page complète stylisée façon rétro-gaming, respectant l’ambiance des jeux 8-bit.
 
 **Projet réalisé par Feur!**
+
 
 
 
