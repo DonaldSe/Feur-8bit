@@ -16,7 +16,7 @@ Objectif : Ajouter une touche rétro-gaming à la production
 └─────────────────────────────────────────────────────────────────────────┘
 
 🔗 URL de la page retro-gaming :
-   https://donaldse.github.io/Feur-8bit/retro
+   https://donaldse.github.io/Feur-8bit
 
 📝 Route dans l'application Angular :
    /feur8bit-app
@@ -64,29 +64,6 @@ Objectif : Ajouter une touche rétro-gaming à la production
 • SCSS avec animations CSS3
 • Signals pour la gestion d'état
 • Responsive design
-
-
-┌─────────────────────────────────────────────────────────────────────────┐
-│ INSTALLATION ET LANCEMENT                                              │
-└─────────────────────────────────────────────────────────────────────────┘
-
-1. Cloner ou créer le projet Angular :
-   ng new nird-retro-project --routing --style=scss
-
-2. Créer les composants :
-   ng generate component pages/retro-gaming-page
-   ng generate component components/retro-hud
-   ng generate component components/retro-section
-   ng generate service services/game-state
-
-3. Copier les fichiers fournis dans les bons dossiers
-
-4. Lancer le serveur :
-   ng serve
-
-5. Accéder à l'application :
-   http://localhost:4200/retro
-
 
 ┌─────────────────────────────────────────────────────────────────────────┐
 │ STRUCTURE DU PROJET                                                     │
