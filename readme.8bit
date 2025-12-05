@@ -16,7 +16,8 @@ Objectif : Ajouter une touche rétro-gaming à la production
 └─────────────────────────────────────────────────────────────────────────┘
 
 🔗 URL de la page retro-gaming :
-   https://donaldse.github.io/Feur-8bit/retro
+   https://donaldse.github.io/Feur-8bit/retro/
+  Attention si fonctionne pas à la fin mettez un slash "/" dans le lien
 
 📝 Route dans l'application Angular :
    /feur8bit-app
